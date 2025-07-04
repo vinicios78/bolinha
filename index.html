@@ -41,3 +41,27 @@
         });
     </script>
 </body>
+<body>
+    <img id="bolinha" src="img/bola-removebg-preview.png" alt="bolinha">
+
+    <script>
+        const bolinha2 = document.getElementById('bolinha2');
+        let x = window.innerWidth / 2;
+        let y = window.innerHeight / 2;
+        const velocidade = 5;
+
+        document.addEventListener('keydown', (e) => {
+            if (w === 'ArrowUp') y -= velocidade;
+            if (s=== 'ArrowDown') y += velocidade;
+            if (a === 'ArrowLeft') x -= velocidade;
+            if (d === 'ArrowRight') x += velocidade;
+
+            // Limita dentro da tela
+            x = Math.max(25, Math.min(x, window.innerWidth - 25));
+            y = Math.max(25, Math.min(y, window.innerHeight - 25));
+
+            bolinha.style.left = x + 'px';
+            bolinha.style.top = y + 'px';
+        });
+    </script>
+</body>
